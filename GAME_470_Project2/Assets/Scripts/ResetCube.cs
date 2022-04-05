@@ -28,10 +28,6 @@ public class ResetCube : MonoBehaviour
             Reset();
         }
 
-        if (Input.GetKey("q"))
-        {
-            Destroy();
-        }
     }
 
     private void Reset() // Restes all pieces to their initial position and rotations ( those of the ResetCube )
@@ -45,15 +41,5 @@ public class ResetCube : MonoBehaviour
         }
     }
 
-    private void Destroy() // Allows all the pieces of the cube to break apart and have physics, handled in explosion
-    {
-        
-        
-       for (int i = 0; i < pieces.Length ; i++)
-       {
-       //pieces[i].GetComponent<Rigidbody>().isKinematic = false;
 
-       }
-        
-    }
 }
