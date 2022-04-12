@@ -110,13 +110,13 @@ public class ReadCube : MonoBehaviour
             // Does the ray intersect any objects in the layer mask
             if (Physics.Raycast(ray, rayTransform.forward, out hit, Mathf.Infinity, layerMask)) 
             {
-                Debug.DrawRay(ray, rayTransform.forward * hit.distance, Color.yellow);
+                Debug.DrawRay(ray, rayTransform.forward * hit.distance, Color.red);
                 facesHit.Add(hit.collider.gameObject);
                 print(hit.collider.gameObject.name);
             }
             else
             {
-                Debug.DrawRay(ray, rayTransform.forward * 1000, Color.green);
+                Debug.DrawRay(ray, rayTransform.forward * 1000, Color.white);
             }
         }
         return facesHit;   
