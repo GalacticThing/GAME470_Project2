@@ -32,13 +32,14 @@ public class ReadCube : MonoBehaviour
 
         cubeState = FindObjectOfType<CubeState>();
         cubeMap = FindObjectOfType<CubeMap>();
-        ReadState();
+        //ReadState();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ReadState();
+        
 
     }
 
