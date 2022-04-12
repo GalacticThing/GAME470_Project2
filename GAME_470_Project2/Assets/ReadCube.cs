@@ -14,21 +14,21 @@ public class ReadCube : MonoBehaviour
 
     private int layerMask = 1 << 6; // This is the layer mask for the faces of the cube
     CubeState cubeState;
+    CubeMap cubeMap;
+
+
     // Start is called before the first frame update
     void Start()
     {
         cubeState = FindObjectOfType<CubeState>();
-    }
+        cubeMap = FindObjectOfType<CubeMap>();
 
-    // Update is called once per frame
-    void Update()
-    {
         List<GameObject> facesHit = new List<GameObject>();
         Vector3 ray = tFront.transform.position;
         RaycastHit hit;
 
         // Does the ray intersect any objects in the layer mask
-        if(Physics.Raycast(ray, tFront.right, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, tFront.right, out hit, Mathf.Infinity, layerMask))
         {
             Debug.DrawRay(ray, tFront.right * hit.distance, Color.yellow);
             facesHit.Add(hit.collider.gameObject);
@@ -40,6 +40,13 @@ public class ReadCube : MonoBehaviour
         }
 
         cubeState.front = facesHit;
+        cubeMap.Set();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
 
