@@ -32,8 +32,8 @@ public class CubeMap : MonoBehaviour
 
         UpdateMap(cubeState.front, front); 
         UpdateMap(cubeState.back, back);
-        //UpdateMap(cubeState.left, left);
-        //UpdateMap(cubeState.right, right);
+        UpdateMap(cubeState.left, left);
+        UpdateMap(cubeState.right, right);
         UpdateMap(cubeState.up, up);
         UpdateMap(cubeState.down, down);
         
@@ -68,7 +68,6 @@ public class CubeMap : MonoBehaviour
             {
                 map.GetComponent<Image>().color = Color.blue;
             }
-            
             i++;
             
         }
