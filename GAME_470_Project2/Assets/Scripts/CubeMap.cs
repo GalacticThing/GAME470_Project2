@@ -30,12 +30,13 @@ public class CubeMap : MonoBehaviour
     {
         cubeState = FindObjectOfType<CubeState>();
 
-        UpdateMap(cubeState.front, front);
+        UpdateMap(cubeState.front, front); 
         UpdateMap(cubeState.back, back);
         UpdateMap(cubeState.left, left);
         UpdateMap(cubeState.right, right);
         UpdateMap(cubeState.up, up);
         UpdateMap(cubeState.down, down);
+        
     }
 
     void UpdateMap(List<GameObject> face, Transform side)
@@ -43,11 +44,10 @@ public class CubeMap : MonoBehaviour
         int i = 0;
         foreach (Transform map in side)
         {
-            if ( face[0].name[0] == 'F')
+            if ( face[i].name[0] == 'F')
             {
                 map.GetComponent<Image>().color = new Color(1, 0.5f, 0, 1);
             }
-            /*
             if (face[i].name[0] == 'B')
             {
                 map.GetComponent<Image>().color = Color.red;
@@ -68,7 +68,7 @@ public class CubeMap : MonoBehaviour
             {
                 map.GetComponent<Image>().color = Color.blue;
             }
-            */
+            
             i++;
             
         }
