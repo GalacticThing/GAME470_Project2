@@ -18,6 +18,8 @@ public class PivotRotation : MonoBehaviour
     private ReadCube readCube;
     private CubeState cubeState;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +87,7 @@ public class PivotRotation : MonoBehaviour
 
     public void Rotate(List<GameObject> side)
     {
+
         activeSide = side;
         mouseRef = Input.mousePosition;
         dragging = true;
@@ -104,6 +107,7 @@ public class PivotRotation : MonoBehaviour
 
     public void RotateToRightAngle()
     {
+        
         Vector3 vec = transform.localEulerAngles;
         // round vec to nearest 90 degrees
         vec.x = Mathf.Round(vec.x / 90) * 90;

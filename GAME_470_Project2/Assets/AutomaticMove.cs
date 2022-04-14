@@ -14,7 +14,7 @@ public class AutomaticMove : MonoBehaviour
     private CubeState cubeState;
     private ReadCube readCube;
 
-    //public int difficulty;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Start()
@@ -83,8 +83,10 @@ public class AutomaticMove : MonoBehaviour
 
         for (int i = 0; i < shuffleLength; i++)
         {
+            
             int randomMove = Random.Range(0, allMoves.Count);
             moves.Add(allMoves[randomMove]);
+            click.Play();
         }
         moveList = moves;
     }
@@ -93,6 +95,7 @@ public class AutomaticMove : MonoBehaviour
     {
         readCube.ReadState();
         CubeState.autoRotating = true;
+        click.Play();
         if (move == "U")
         {
             RotateSide(cubeState.up, -90);
@@ -169,6 +172,7 @@ public class AutomaticMove : MonoBehaviour
 
     void RotateSide(List<GameObject> side, float angle)
     {
+        
         // automatically rotate the side by the angle
         PivotRotation pr = side[4].transform.parent.GetComponent<PivotRotation>();
         pr.StartAutoRotate(side, angle);

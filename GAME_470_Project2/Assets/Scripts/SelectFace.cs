@@ -21,7 +21,7 @@ public class SelectFace : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !CubeState.autoRotating)
         {
-            // rad the current state of the cube
+            // read the current state of the cube
             readCube.ReadState();
 
             // raycast from mouse towards the cube to see if a face is hit
