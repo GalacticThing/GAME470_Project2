@@ -92,6 +92,16 @@ public class PivotRotation : MonoBehaviour
         localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
     }
 
+    public void StartAutoRotate(List<GameObject> side, float angle)
+    {
+        cubeState.PickUp(side);
+        Vector3 localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
+        targetQuaternion = Quaternion.AngleAxis(angle, localForward) * transform.localRotation;
+        activeSide = side;
+        autoRotating = true;
+
+    }
+
     public void RotateToRightAngle()
     {
         Vector3 vec = transform.localEulerAngles;
@@ -118,6 +128,7 @@ public class PivotRotation : MonoBehaviour
             //unparent the pieces
             cubeState.PutDown(activeSide, transform.parent);
             readCube.ReadState();
+            CubeState.autoRotating = false;
 
             autoRotating = false;
             dragging = false;

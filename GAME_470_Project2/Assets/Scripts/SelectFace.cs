@@ -19,7 +19,7 @@ public class SelectFace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !CubeState.autoRotating)
         {
             // rad the current state of the cube
             readCube.ReadState();
@@ -48,6 +48,8 @@ public class SelectFace : MonoBehaviour
                     {
                         //Pick it up
                         cubeState.PickUp(cubeSide);
+                        //start the side rotation logic
+                        cubeSide[4].transform.parent.GetComponent<PivotRotation>().Rotate(cubeSide);
                     }
                 }
             }
