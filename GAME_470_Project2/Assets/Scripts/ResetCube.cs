@@ -23,6 +23,7 @@ public class ResetCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.Space))
         { 
             Reset();
@@ -30,7 +31,7 @@ public class ResetCube : MonoBehaviour
 
     }
 
-    private void Reset() // Restes all pieces to their initial position and rotations ( those of the ResetCube )
+    public void Reset() // Restes all pieces to their initial position and rotations ( those of the ResetCube )
     {
         for (int i = 0; i < pieces.Length; i++)
         {

@@ -16,8 +16,9 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    void Explode()
+    public void Explode()
     {
+        
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider nearby in colliders)
