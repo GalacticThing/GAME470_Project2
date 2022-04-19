@@ -32,6 +32,7 @@ public class AutomaticMoveDemo : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
        if (moveList.Count > 0  && !CubeState.autoRotating && CubeState.started )
         {
             // Do the move at the first index;
@@ -39,10 +40,6 @@ public class AutomaticMoveDemo : MonoBehaviour
 
             // remove the move at the first index
             moveList.Remove(moveList[0]);
-        }
-       if(moveList.Count == 0 && CubeState.autoRotating && !boopIsPlaying)
-        {
-            StartCoroutine(PlayeEndBoop());
         }
 
         
@@ -82,7 +79,7 @@ public class AutomaticMoveDemo : MonoBehaviour
         
         readCube.ReadState();
         CubeState.autoRotating = true;
-        pivotRotation.speed += 5f;
+        pivotRotation.speed = 100;
 
         if (move == "U")
         {
@@ -167,12 +164,6 @@ public class AutomaticMoveDemo : MonoBehaviour
         
     }
 
-    IEnumerator PlayeEndBoop()
-    {
-        boopIsPlaying = true;
-        yield return new WaitForSeconds(1f);
-        boopIsPlaying = false;
-        pivotRotation.speed = 200f;
-    }
+
 
 }

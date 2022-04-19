@@ -11,13 +11,14 @@ public class RotateBigCube : MonoBehaviour
     Vector2 mouseDelta;
 
     public GameObject target;
+    Pause pause;
 
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pause = FindObjectOfType<Pause>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class RotateBigCube : MonoBehaviour
 
     void Drag()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && !pause.isPaused)
         {
             //while the mouse is held down the cube can be moved around it's central axis
             mouseDelta = Input.mousePosition - previousMousePosition;
@@ -39,7 +40,7 @@ public class RotateBigCube : MonoBehaviour
         else
         {
             // auto move to target position
-            if (transform.rotation != target.transform.rotation)
+            if (transform.rotation != target.transform.rotation && !pause.isPaused)
             {
                 var step = speed * Time.deltaTime;
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, step);
@@ -56,7 +57,7 @@ public class RotateBigCube : MonoBehaviour
             firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && !pause.isPaused)
         {
             //get the 2D position of the second mouse click
             secondPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
