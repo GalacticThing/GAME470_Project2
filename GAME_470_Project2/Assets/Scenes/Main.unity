@@ -3543,7 +3543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  Button: {fileID: 866254249}
+  Shuffle1Button: {fileID: 0}
 --- !u!1 &833759419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8526293056602080208, guid: e4ed4f3a4c598e54fa3c76a33a469576, type: 3}
