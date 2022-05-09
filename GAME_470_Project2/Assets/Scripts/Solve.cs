@@ -7,6 +7,8 @@ public class Solve : MonoBehaviour
 {
     public ReadCube readCube;
     public CubeState cubeState;
+    public AudioSource confirm;
+
     private bool doOnce = true;
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class Solve : MonoBehaviour
 
     public void Solver()
     {
+        confirm.Play();
         readCube.ReadState();
 
         //get the state of the cube as a string

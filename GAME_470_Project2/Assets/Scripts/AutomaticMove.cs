@@ -21,6 +21,7 @@ public class AutomaticMove : MonoBehaviour
     public GameObject ResetButton;
     public bool ResetAvailable;
 
+    public AudioSource select;
     private bool boopIsPlaying;
 
     // Start is called before the first frame update
@@ -58,8 +59,41 @@ public class AutomaticMove : MonoBehaviour
     // Shuffle functions with difficulty settings //_________________________________________________
     public void ShuffleLv1()
     {
+        select.Play();
         List<string> moves = new List<string>();
         int shuffleLength = Random.Range(2, 5);
+
+        for (int i = 0; i < shuffleLength; i++)
+        {
+            int randomMove = Random.Range(0, allMoves.Count);
+            moves.Add(allMoves[randomMove]);
+            
+        }
+        moveList = moves;
+        select.Play();
+    }
+
+    public void ShuffleLv2()
+    {
+        select.Play();
+        List<string> moves = new List<string>();
+        int shuffleLength = Random.Range(6, 9);
+
+        for (int i = 0; i < shuffleLength; i++)
+        {
+            int randomMove = Random.Range(0, allMoves.Count);
+            moves.Add(allMoves[randomMove]);
+            
+        }
+        moveList = moves;
+        select.Play();
+    }
+
+    public void ShuffleLv3()
+    {
+        select.Play();
+        List<string> moves = new List<string>();
+        int shuffleLength = Random.Range(10,15);
 
         for (int i = 0; i < shuffleLength; i++)
         {
@@ -71,36 +105,9 @@ public class AutomaticMove : MonoBehaviour
         
     }
 
-    public void ShuffleLv2()
-    {
-        List<string> moves = new List<string>();
-        int shuffleLength = Random.Range(6, 9);
-
-        for (int i = 0; i < shuffleLength; i++)
-        {
-            int randomMove = Random.Range(0, allMoves.Count);
-            moves.Add(allMoves[randomMove]);
-            
-        }
-        moveList = moves;
-    }
-
-    public void ShuffleLv3()
-    {
-        List<string> moves = new List<string>();
-        int shuffleLength = Random.Range(10,15);
-
-        for (int i = 0; i < shuffleLength; i++)
-        {
-            int randomMove = Random.Range(0, allMoves.Count);
-            moves.Add(allMoves[randomMove]);
-            
-        }
-        moveList = moves;
-    }
-
     public void ShuffleLv4()
     {
+        select.Play();
         List<string> moves = new List<string>();
         int shuffleLength = Random.Range(16,20);
 
@@ -112,6 +119,7 @@ public class AutomaticMove : MonoBehaviour
             
         }
         moveList = moves;
+        
     }
 
     void DoMove(string move) // contains the instructions for every autorotate command as left turn, right turn, and 180 turn
