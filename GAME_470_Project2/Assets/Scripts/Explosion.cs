@@ -5,12 +5,13 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public float explodeForce, radius;
+    public AudioSource explode;
    
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("q"))
+        if (Input.GetKeyDown("q"))
         {
             Explode();
         }
@@ -18,6 +19,7 @@ public class Explosion : MonoBehaviour
 
     public void Explode()
     {
+        explode.Play();
         
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
