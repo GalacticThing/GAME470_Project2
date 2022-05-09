@@ -6,12 +6,19 @@ public class Explosion : MonoBehaviour
 {
     public float explodeForce, radius;
     public AudioSource explode;
-   
+    public Solve solve;
+    public CubeState cubeState;
+
+    private void Start()
+    {
+        solve = FindObjectOfType<Solve>();
+        cubeState = FindObjectOfType<CubeState>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("q") && !CubeState.autoRotating )
         {
             Explode();
         }

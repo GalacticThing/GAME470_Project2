@@ -19,6 +19,7 @@ public class AutomaticMove : MonoBehaviour
     public AudioSource click;
 
     public GameObject ResetButton;
+    public GameObject SolveButton;
     public bool ResetAvailable;
 
     public AudioSource select;
@@ -45,7 +46,8 @@ public class AutomaticMove : MonoBehaviour
             moveList.Remove(moveList[0]);
 
             ResetButton.SetActive(false);
-            ResetAvailable = false;
+            SolveButton.SetActive(false);
+            //ResetAvailable = false;
         }
        if(moveList.Count == 0 && CubeState.autoRotating && !boopIsPlaying)
         {
@@ -222,7 +224,8 @@ public class AutomaticMove : MonoBehaviour
         pivotRotation.speed = 200f;
         yield return new WaitForSeconds(0.1f);
         ResetButton.SetActive(true);
-        ResetAvailable = true;
+        SolveButton.SetActive(true);
+        //ResetAvailable = true;
     }
 
 }

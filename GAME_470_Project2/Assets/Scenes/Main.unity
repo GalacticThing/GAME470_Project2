@@ -8928,6 +8928,7 @@ MonoBehaviour:
   boop: {fileID: 1829825633}
   click: {fileID: 808042596}
   ResetButton: {fileID: 1440427483}
+  SolveButton: {fileID: 2003528712}
   ResetAvailable: 0
   select: {fileID: 1999513854}
 --- !u!82 &808042596
