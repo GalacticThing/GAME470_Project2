@@ -1596,7 +1596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Difficulty 1
+  m_Text: 'Start Game
 
 '
 --- !u!222 &281211360
@@ -3206,6 +3206,7 @@ GameObject:
   - component: {fileID: 808042596}
   - component: {fileID: 808042590}
   - component: {fileID: 808042591}
+  - component: {fileID: 808042595}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -3328,6 +3329,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be838485f6dffe6418b76b7d7f2ac645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &808042595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808042588}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b586f0ee5e061544a2e2660ce0e7c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tUp: {fileID: 1139609497}
+  tDown: {fileID: 842568318}
+  tLeft: {fileID: 2092516583}
+  tRight: {fileID: 807575829}
+  tFront: {fileID: 1861988115}
+  tBack: {fileID: 1832807140}
+  emptyGO: {fileID: 982213833}
 --- !u!82 &808042596
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3616,12 +3636,12 @@ GameObject:
   - component: {fileID: 866254252}
   - component: {fileID: 866254251}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &866254250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3631,7 +3651,7 @@ RectTransform:
   m_GameObject: {fileID: 866254249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8600234, y: 2.325, z: 2.325}
+  m_LocalScale: {x: 3.530884, y: 4.4135494, z: 4.4135494}
   m_Children:
   - {fileID: 281211358}
   m_Father: {fileID: 1999513853}
@@ -3639,7 +3659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 188.40002, y: 176}
+  m_AnchoredPosition: {x: 506.3, y: 176}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &866254251
@@ -3686,9 +3706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AutomaticMove, Assembly-CSharp
-        m_MethodName: ShuffleLv1
+      - m_Target: {fileID: 1999513854}
+        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
+        m_MethodName: playGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3711,7 +3731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22834998, g: 0.990566, b: 0.1812922, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8396,6 +8416,7 @@ GameObject:
   - component: {fileID: 1999513852}
   - component: {fileID: 1999513851}
   - component: {fileID: 1999513850}
+  - component: {fileID: 1999513854}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8491,6 +8512,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1999513854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999513849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2015484d84ceb2c4e86ff306acb46b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2003528712
 GameObject:
   m_ObjectHideFlags: 0

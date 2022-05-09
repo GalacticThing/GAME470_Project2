@@ -78,6 +78,7 @@ public class AutomaticMoveDemo : MonoBehaviour
     {
         
         readCube.ReadState();
+        //readStartCube.ReadState();
         CubeState.autoRotating = true;
         pivotRotation.speed = 100;
 

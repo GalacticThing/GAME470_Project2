@@ -18,6 +18,8 @@ public class AutomaticMove : MonoBehaviour
     public AudioSource boop;
     public AudioSource click;
 
+    public GameObject ResetButton;
+
     private bool boopIsPlaying;
 
     // Start is called before the first frame update
@@ -38,11 +40,16 @@ public class AutomaticMove : MonoBehaviour
 
             // remove the move at the first index
             moveList.Remove(moveList[0]);
+
+            ResetButton.SetActive(false);
         }
        if(moveList.Count == 0 && CubeState.autoRotating && !boopIsPlaying)
         {
             StartCoroutine(PlayeEndBoop());
-        }     
+            
+        }  
+       
+      
     }
 
     // Shuffle functions with difficulty settings //_________________________________________________
@@ -202,6 +209,8 @@ public class AutomaticMove : MonoBehaviour
         yield return new WaitForSeconds(1f);
         boopIsPlaying = false;
         pivotRotation.speed = 200f;
+        yield return new WaitForSeconds(0.1f);
+        ResetButton.SetActive(true);
     }
 
 }
