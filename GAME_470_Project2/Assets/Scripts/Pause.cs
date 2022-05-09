@@ -10,6 +10,8 @@ public class Pause : MonoBehaviour
     public GameObject pauseCanvas;
     public Slider volumeSlider;
     public AudioSource music;
+    public AudioSource pauseAudio; // attached to pauseaudioholder
+
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class Pause : MonoBehaviour
     {
         if (!isPaused && (Input.GetKeyDown(KeyCode.P)))
         {
+            pauseAudio.Play();
             isPaused = true;
         }
         if (isPaused && (Input.GetKeyDown(KeyCode.O)))
@@ -30,6 +33,7 @@ public class Pause : MonoBehaviour
 
         if(isPaused == true)
         {
+            
             Time.timeScale = 0.01f;
             pauseCanvas.SetActive(true);
             music.volume = volumeSlider.value;
@@ -43,13 +47,14 @@ public class Pause : MonoBehaviour
 
     public void Resume()
     {
+        pauseAudio.Play();
         isPaused = false;
     }
 
     public void ToMainMenu()
     {
         isPaused = false;
-        SceneManager.LoadScene(sceneName: "StartMenu");
+        StartCoroutine(ReturnToMenu());
     }
 
     public void clickQuit()
@@ -61,8 +66,18 @@ public class Pause : MonoBehaviour
         #endif
     }
 
-    public IEnumerator DeactivateButtons()
+    public IEnumerator PlayPauseSound()
     {
+        pauseAudio.Play();
         yield return null;
     }
+
+    public IEnumerator ReturnToMenu()
+    {
+        pauseAudio.Play();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(sceneName: "StartMenu");    
+    }
+
+
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
-    public AudioSource confirm;
+    public AudioSource confirm; // attached to the directional light
    public void playGame()
     {
         //SceneManager.LoadScene("Main");

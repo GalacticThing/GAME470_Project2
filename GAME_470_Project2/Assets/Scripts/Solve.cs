@@ -7,7 +7,7 @@ public class Solve : MonoBehaviour
 {
     public ReadCube readCube;
     public CubeState cubeState;
-    public AudioSource confirm;
+    public AudioSource confirm; // attached to the ground object
 
     private bool doOnce = true;
 
