@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ReadCube : MonoBehaviour
 {
+    public GameObject[] pieces;
+    public Transform[] piecesStartPosition;
+    public GameObject ResetButton;
 
     public Transform tUp;
     public Transform tDown;
@@ -22,6 +25,7 @@ public class ReadCube : MonoBehaviour
     private int layerMask = 1 << 8; // This is the layer mask for the faces of the cube
     CubeState cubeState;
     CubeMap cubeMap;
+    AutomaticMove automaticMove;
     public GameObject emptyGO;
 
 
@@ -32,6 +36,7 @@ public class ReadCube : MonoBehaviour
 
         cubeState = FindObjectOfType<CubeState>();
         cubeMap = FindObjectOfType<CubeMap>();
+        automaticMove = FindObjectOfType<AutomaticMove>();
         ReadState();
         CubeState.started = true;
         
@@ -40,7 +45,17 @@ public class ReadCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CubeState.started == true && AutomaticMove.moveList.Count == 0 && automaticMove.ResetAvailable)
+        {
+            for (int i = 0; i < pieces.Length; i++)
+            {
+                if (pieces[i].transform.position == piecesStartPosition[i].transform.position
+                && pieces[i].transform.rotation == piecesStartPosition[i].transform.rotation)
+                {
+                    print("The cube is a match");
+                }
+            }
+        }
     }
 
     public void ReadState()
@@ -60,6 +75,7 @@ public class ReadCube : MonoBehaviour
 
         // update the map with the found positions
         cubeMap.Set();
+        
     }
 
     void SetRayTransforms()
@@ -120,6 +136,24 @@ public class ReadCube : MonoBehaviour
                 Debug.DrawRay(ray, rayTransform.forward * 1000, Color.green);
             }
         }
+        //StartCoroutine(CheckIfSolved());
         return facesHit;   
+    }
+
+    IEnumerator CheckIfSolved()
+    {
+        if (CubeState.started == true && AutomaticMove.moveList.Count == 0 && automaticMove.ResetAvailable)
+        {
+            for (int i = 0; i < pieces.Length; i++)
+            {
+                if (pieces[i].transform.position == piecesStartPosition[i].transform.position
+                && pieces[i].transform.rotation == piecesStartPosition[i].transform.rotation)
+                {
+                    print("The cube is a match");
+                }
+            }
+        }
+        //print("Check has been called");
+        yield return null;
     }
 }

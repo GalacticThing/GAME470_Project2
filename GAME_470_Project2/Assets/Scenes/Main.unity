@@ -3412,7 +3412,7 @@ RectTransform:
   m_GameObject: {fileID: 734949916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1506686006}
   - {fileID: 1063106062}
@@ -3791,7 +3791,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808042588}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d8d801b8f1f415409303e8001ca131b, type: 3}
   m_Name: 
@@ -3862,6 +3862,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b03bb78c34fc2340bb8bf0d5cb58a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pieces:
+  - {fileID: 120584690}
+  - {fileID: 1619414251}
+  - {fileID: 1453671788}
+  - {fileID: 833759419}
+  - {fileID: 1030981358}
+  - {fileID: 1701258577}
+  - {fileID: 1292170270}
+  - {fileID: 1222427581}
+  - {fileID: 668640511}
+  - {fileID: 1668722935}
+  - {fileID: 1147759827}
+  - {fileID: 359672014}
+  - {fileID: 1581608229}
+  - {fileID: 1216608559}
+  - {fileID: 474367935}
+  - {fileID: 1081504625}
+  - {fileID: 560562919}
+  - {fileID: 1525636608}
+  - {fileID: 1462107199}
+  - {fileID: 1727905014}
+  - {fileID: 949863891}
+  - {fileID: 1791577277}
+  - {fileID: 1121586556}
+  - {fileID: 1111211927}
+  - {fileID: 1223364165}
+  - {fileID: 707896117}
+  piecesStartPosition:
+  - {fileID: 3865748839332905269}
+  - {fileID: 2743875362876019006}
+  - {fileID: 1369808821862988938}
+  - {fileID: 3110992834443714870}
+  - {fileID: 226753260812029267}
+  - {fileID: 5257750814818567814}
+  - {fileID: 6706788989162914913}
+  - {fileID: 6808060854408785242}
+  - {fileID: 5309481651445855841}
+  - {fileID: 1583871202914151514}
+  - {fileID: 6557061318479912504}
+  - {fileID: 599281013192502180}
+  - {fileID: 1062280299592878304}
+  - {fileID: 7587689407193488820}
+  - {fileID: 6582896057757923762}
+  - {fileID: 3148732073278007156}
+  - {fileID: 1089675894146070732}
+  - {fileID: 7195691204638719039}
+  - {fileID: 2957137919609028784}
+  - {fileID: 1314528302916346516}
+  - {fileID: 3258975834329154523}
+  - {fileID: 6195083100072861588}
+  - {fileID: 2476169570451542847}
+  - {fileID: 5224530390975978878}
+  - {fileID: 3051754402995268861}
+  - {fileID: 7829591493479433735}
+  ResetButton: {fileID: 1440427483}
   tUp: {fileID: 1139609497}
   tDown: {fileID: 842568318}
   tLeft: {fileID: 2092516583}
@@ -3914,6 +3969,7 @@ MonoBehaviour:
   boop: {fileID: 1829825633}
   click: {fileID: 808042596}
   ResetButton: {fileID: 1440427483}
+  ResetAvailable: 0
 --- !u!82 &808042596
 AudioSource:
   m_ObjectHideFlags: 0

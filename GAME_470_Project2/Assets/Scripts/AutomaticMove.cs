@@ -19,6 +19,7 @@ public class AutomaticMove : MonoBehaviour
     public AudioSource click;
 
     public GameObject ResetButton;
+    public bool ResetAvailable;
 
     private bool boopIsPlaying;
 
@@ -28,6 +29,7 @@ public class AutomaticMove : MonoBehaviour
         cubeState = FindObjectOfType<CubeState>();
         readCube = FindObjectOfType<ReadCube>();
         pivotRotation = FindObjectOfType<PivotRotation>();
+        
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class AutomaticMove : MonoBehaviour
             moveList.Remove(moveList[0]);
 
             ResetButton.SetActive(false);
+            ResetAvailable = false;
         }
        if(moveList.Count == 0 && CubeState.autoRotating && !boopIsPlaying)
         {
@@ -211,6 +214,7 @@ public class AutomaticMove : MonoBehaviour
         pivotRotation.speed = 200f;
         yield return new WaitForSeconds(0.1f);
         ResetButton.SetActive(true);
+        ResetAvailable = true;
     }
 
 }
